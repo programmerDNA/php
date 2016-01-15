@@ -17,8 +17,8 @@ $password  = $_POST['pw'];
 
 <?php
 if( $name== "bts" && $password="army" ){
-   setCookie('isLogin', '1');
-   setCookie('name', $name);
+   $_SESSION['isLogin'] = 1;
+   $_SESSION['name'] = $name;
 ?>
 
 <h1>로그인 완료!</h1>
@@ -28,8 +28,8 @@ return to log in page <a href="./postForm.php">go back</a>
 
 <?php
 }else{
-setCookie('isLogin', '0');
-setCookie('name', '');
+$_SESSION['isLogin'] = 0;
+$_SESSION['name'] = '';
 ?>
 <h1>who are you?</h1>
 no matching ID, password!<br>
